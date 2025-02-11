@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function triste(){
+            document.body.style.background="blue";
+            document.getElementById("texto").style.color = 'white';
+
+        }
+        function feliz(){
+            document.body.style.background="yellow";
+            document.getElementById("texto").style.color = 'black';
+        }
+
+        </script>          
+</head>
+<body>
+    <h1>Como está seu humor hoje?</h1>
+    <p id="texto">Clique no botão que corresponda</p>
+    <button onclick="triste()" >Estou triste</button>
+    <button onclick="feliz()" >Estou feliz</button>
+</body>
+</html>
