@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iluminação Gradual</title>
 </head>
 <body>
-    
+    <p id="texto">Tentar ver sem os olhos, ouvir sem os ouvidos ou respirar sem os pulmões, é como tentar viver a vida cristã sem o Espirito Santo.<br>Spoiler: É impossivel!</p>
+
+    <button onclick="increaseBrightness()">Aumentar Brilho</button>
+
+    <script>
+        let brilho = 100;
+
+        function increaseBrightness() {
+            brilho += 10;
+            if (brilho > 255) brilho = 255;
+            document.body.style.backgroundColor = `rgb(${brilho}, ${brilho}, ${brilho})`;
+        }
+    </script>
 </body>
 </html>

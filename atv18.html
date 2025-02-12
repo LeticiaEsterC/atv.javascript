@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Personalize esse texto ao seu estilo!<br>É so clicar no botao e escolher a fonte de texto que desejar</h1>
+    <button onclick="preload()">Estilizar</button>
+
+    <script>
+    const fontFamily  = ["arial", "verdana", "times new roman", "courier new", "georgia", "comic sans ms", "impact",];
+        let fontes = 0;
+
+        function preload() {
+            document.body.style.fontFamily = fontFamily[fontes];
+            fontes = (fontes + 1)% fontFamily.length;
+        }
+    </script>
 </body>
 </html>

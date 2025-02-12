@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Explosão de Cores</title>
 </head>
 <body>
-    
+    <h1>A página está tão sem graça, clique no botão!</h1>
+    <button onclick="changeColor()">Estilizar</button>
+
+    <script>
+    const colors = ["red", "blue", "green", "yellow", "purple", "orange","pink", "white","black"];
+        let cores = 0;
+
+        function changeColor() {
+            document.body.style.backgroundColor = colors[cores];
+            cores = (cores + 1) % colors.length;
+        }
+    </script>
 </body>
 </html>

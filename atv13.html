@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Desafio do Clique</title>
 </head>
 <body>
-    
+    <button id="dimiui" style="width: 200px; height: 200px; background-color: burlywood;">Clique em mim</button>
+
+    <script>
+        document.getElementById('diminui').addEventListener('click', function() {
+            this.style.width = (this.offsetWidth - 20) + 'px';
+            this.style.height = (this.offsetHeight - 20) + 'px';
+            if (this.offsetWidth <= 0 || this.offsetHeight <= 0) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
