@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação Simples</title>
+</head>
+<style>
+    
+    </style>
+<body>
+    <div id="movimento" style=" position:absolute;">
+        <img src="https://w7.pngwing.com/pngs/666/117/png-transparent-blu-ray-disc-hd-dvd-logo-cd-dvd-electronics-text-trademark-thumbnail.png" alt="..." style="width: 100px; height: 100px;">
+    </div> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="movimen" style="width:50px; height:50px; background-color:rgb(218, 13, 13); position:absolute;"></div><!-- mudando o tamanho do quadrado altera na sua movimentação --> 
+
+    <script>
+        // Código para o primeiro quadrado (movimento)
+        let mover = document.getElementById('movimento');
+        let positionX = 0;
+        let positionY = 0;
+        let directionX = 5;
+        let directionY = 5;
+    
+        function movimentoQuadrado() {
+            positionX += directionX; // Movimento horizontal
+            positionY += directionY; // Movimento vertical
+    
+            // Condições para inverter a direção horizontal quando atingir as bordas da tela
+            if (positionX > window.innerWidth - 50 || positionX < 0) {
+                directionX *= -1; // Inverte a direção horizontal
+            }
+    
+            // Condições para inverter a direção vertical quando atingir as bordas da tela
+            if (positionY > window.innerHeight - 50 || positionY < 0) {
+                directionY *= -1; // Inverte a direção vertical
+            }
+    
+            // Define as novas posições do quadrado
+            mover.style.left = positionX + 'px';
+            mover.style.top = positionY + 'px';
+        }
+    
+        // Chama a função de movimento a cada 10ms para garantir uma animação suave
+        setInterval(movimentoQuadrado, 10);
+    </script>
+    
+
+    <script>
+        // Código para o segundo quadrado (movimen)
+        let mov = document.getElementById('movimen');
+        let positio = 0;
+        let directio  = 1;
+        let topPosition2 = 0; // Adiciona a posição 'top'
+
+        function movimentoQuadra() {
+            positio += directio; // faz o quadrado se mover para a direita
+            if (positio > window.innerWidth - 50 || positio < 0) {
+                directio *= -1; // inverte a direção
+            }
+
+            mov.style.left = positio + 'px';
+
+            if (positio >= window.innerWidth - 50) { // Quando atinge a borda, move para baixo
+                topPosition2 += 50; // move para baixo
+                mov.style.top = topPosition2 + 'px';
+                positio = 0; // reinicia o movimento para a esquerda
+            }
+        }
+        setInterval(movimentoQuadra, 10); // ajusta o intervalo para 10ms
+    </script>
+</body>
+
+</html>

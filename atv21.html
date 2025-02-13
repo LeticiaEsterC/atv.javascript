@@ -19,15 +19,17 @@
         let mover = document.getElementById('movimento');
         let position = 0;
         let direction = 1;
-
         function movimentoQuadrado() {
-            position += direction;// faz o quadrado se mover(+= é a mesma coisa que position = position + direction)
+            position += direction; // faz o quadrado se mover(+= é a mesma coisa que position = position + direction)
             if (position > window.innerWidth - 50 || position < 0) { // faz o quadrado mover para a direção quando chega no final da tela(sem o elemnto da função abaixo o quadrado iria segir para o infinito)
-                direction *= -1; // muda a direção do quadrado
             }
-            mover.style.left = position + 'px';// faz o quadrado se mover para a direita
-            
-
+            mover.style.left = position + 'px'; // faz o quadrado se mover para a direita
+            if (position > window.innerWidth - 50 || position < 0) {
+            mover.style.top = (parseInt(mover.style.top) || 0) + 50 + 'px'; // faz o quadrado se mover para baixo
+            }
+            if (position > window.innerWidth - 50 || position < 0) {
+            mover.style.right = (parseInt(mover.style.right) || 0) + 50 + 'px'; // faz o quadrado se mover para baixo
+            }
         }
         setInterval(movimentoQuadrado, 0,1);// faz o quadrado se mover a cada 10 milisegundos
         </script>
