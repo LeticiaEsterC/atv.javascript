@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sombra Dinâmica</title>
 </head>
+<script>
+window.onload = function(){
+    document.getElementById("sombrear").onclick = sombra;
+}
+
+ function sombra(){
+    document.getElementById("texto").style.textShadow = "5px 5px 1px #969696";
+}
+</script>
 <body>
-    <h1>Mantenha o foco!</h1>
-    
+    <h1 id="texto">Mantenha o foco!</h1>
+    <input type="button" value="Aplicar Sombra" id="sombrear"/>
+
 </body>
 </html>
