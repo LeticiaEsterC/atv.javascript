@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senha Secreta</title>
+    <script>
+        function validarFormulario() {
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+
+        if (email == "") {// Validando o campo e-mail
+            document.getElementById("erroEmail").innerHTML = "O e-mail é obrigatório.";
+            formularioValido = false;
+
+        } else {
+            var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!regexEmail.test(email)) {
+                document.getElementById("erroEmail").innerHTML = "Por favor, insira um e-mail válido.";
+                formularioValido = false;
+            }// Verificando o formato do e-mail
+        }
+
+            // Verifica se a senha foi preenchida
+            if (senha === ""){
+                // Se algum campo estiver vazio, exibe uma mensagem de erro e impede o envio
+                alert("Por favor, preencha todos os campos.");
+                return false; // Impede o envio do formulário
+            }
+
+            if (senha.length < 6) {// Verifica se a senha tem pelo menos 6 caracteres
+                alert("A senha deve ter pelo menos 6 caracteres.");
+                return false; // Impede o envio do formulário
+            } 
+            
+            return true;// Se tudo estiver certo, o formulário será enviado
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Formulário de Contato</h2>
+    <form onsubmit="return validarFormulario()">
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email">
+        </div><br>
+        <label for="senha">Senha:</label>
+        <input type="senha" id="senha" name="senha">
+    </div><br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+</html>

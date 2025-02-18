@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.Formulário de Cadastro</title>
+</head>
+<style>
+    .erro {
+        color: red;
+        font-size: 14px;
+    }
+</style>
+<script>
+    function validarFormulario(event) {
+        document.getElementById("erroNome").innerHTML = "";
+        document.getElementById("erroEmail").innerHTML = "";
+
+        var nome = document.getElementById("nome").value;
+        var email = document.getElementById("email").value;
+        var formularioValido = true;
+
+        if (nome == "") {// Validando o campo nome
+            document.getElementById("erroNome").innerHTML = "O nome é obrigatório.";
+            formularioValido = false;
+        }
+
+        if (email == "") {// Validando o campo e-mail
+            document.getElementById("erroEmail").innerHTML = "O e-mail é obrigatório.";
+            formularioValido = false;
+
+        } else {
+            var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!regexEmail.test(email)) {
+                document.getElementById("erroEmail").innerHTML = "Por favor, insira um e-mail válido.";
+                formularioValido = false;
+            }// Verificando o formato do e-mail
+        }
+
+        if (!formularioValido) {
+            event.preventDefault();
+        }// Se algum campo estiver inválido, impedir o envio
+    }
+</script>
+</head>
+<body>
+
+<h2>Formulário</h2>
+<form onsubmit="validarFormulario(event)">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br>
+    <span id="erroNome" class="erro"></span><br><br>
+
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <span id="erroEmail" class="erro"></span><br><br>
+
+    <input type="submit" value="Enviar">
+</form>
+</body>
+</html>

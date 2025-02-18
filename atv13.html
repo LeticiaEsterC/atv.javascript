@@ -6,16 +6,16 @@
     <title>Desafio do Clique</title>
 </head>
 <body>
-    <button id="diminui" style="width: 200px; height: 200px; background-color: burlywood;">Clique em mim</button>
+    <div id="quadrado" style="width: 500px; height: 500px; background-color: burlywood;"></div>
 
     <script>
-        document.getElementById('diminui').addEventListener('click', function() {
-            this.style.width = (this.offsetWidth - 20) + 'px';
-            this.style.height = (this.offsetHeight - 20) + 'px';
-            if (this.offsetWidth <= 0 || this.offsetHeight <= 0) {
-                this.style.display = 'none';
-            }
-        });
+        let tamanho = 500;
+        document.body.onclick = function() {
+            tamanho -= 20; // o v alor de tamanho sendo 200-10
+            var quadrado = document.getElementById('quadrado');
+            quadrado.style.height = tamanho + 'px';
+            quadrado.style.width = tamanho + 'px';
+        };
     </script>
 </body>
 </html>
